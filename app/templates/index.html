@@ -1,22 +1,8 @@
-<html>
-    <head>
-        <title>{{ title }} - Microblog</title>
-    </head>
-    <body>
-        <h1>
-            Hello, I am adventurer {{ adventurer.name }}!<br />
-            I wear a {{ adventurer.hat }} hat!
-        </h1>
+{% extends "base.html" %}
 
-        <p>
-            Games I played in are:<br />
-            <table>
-                {% for game in games %}
-                    <tr>
-                        <td>{{ game }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-        </p>
-    </body>
-</html>
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
