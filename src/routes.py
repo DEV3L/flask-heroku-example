@@ -1,7 +1,8 @@
 from flask import render_template, flash, redirect
-from app.forms import LoginForm
 
 from app import app
+from src.forms import LoginForm
+
 
 @app.route('/index1')
 def index1():
@@ -16,12 +17,13 @@ def index1():
         </body>
     </html>'''
 
+
 @app.route('/index2')
 def index2():
     adventurer = {'hat': 'fedora',
                   'name': 'DEV3L'}
 
-    games = [1,2,3,4,5]
+    games = [1, 2, 3, 4, 5]
     return render_template('index.html',
                            # parameters sent to template
                            title='', adventurer=adventurer, games=games)
@@ -45,6 +47,7 @@ def index():
     print('name = ' + posts[0]['author']['username'])
     return render_template('index.html', title='Home', user=user, posts=posts)
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -53,6 +56,7 @@ def login():
             form.username.data, form.remember_me.data))
         return redirect('/index')
     return render_template('login.html', title='Sign In', form=form)
+
 
 @app.route('/login1')
 def login1():

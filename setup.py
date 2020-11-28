@@ -9,9 +9,9 @@ setup(
     author_email='jus.beall@gmail.com',
     keywords=['dev3l', 'python', 'flask',],
     install_requires=[
-        'flask',
-        'flask-runner',
+        'flask >= 1.0.0',
         'flask-wtf',
+        'flask-script',
         'gunicorn',
         # tests / ci
         'bandit',

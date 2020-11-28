@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT microblog:app --log-file=- -R
+web: gunicorn -b 0.0.0.0:$PORT app:app --log-file=- -R
