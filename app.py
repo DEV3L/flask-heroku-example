@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] = 'any secret string'
 
 
 @app.route('/hello')
-def index1():
+def hello():
     user = {'username': 'DEV3L'}
     return '''
     <html>
